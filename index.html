@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amai - Sweet & Cute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="assets/Wordmark.png" alt="Amai Logo" class="brand-logo"
+                onerror="this.src='https://placehold.co/150x50/d6eefe/712d42?text=Amai';">
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#process">Process</a>
+            <a href="#reviews">Reviews</a>
+        </nav>
+        <div class="nav-icons">
+            <button class="btn btn-icon" id="cartToggleBtn">
+                <i class="ph ph-shopping-cart"></i> Cart <span id="cartCount" class="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Baking smiles,<br>every single day!</h1>
+                <p>Welcome to Amai! We bake the cutest and most delicious treats in town. Handcrafted with love by our
+                    master pup-founder.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Order Desserts</a>
+                    <button id="meetChefBtn" class="btn btn-secondary">Meet the Founder</button>
+                </div>
+            </div>
+            <div class="hero-img-wrapper">
+                <img src="assets/hero.jpg" alt="Cute cookies" class="floating-img">
+            </div>
+            <div class="wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.22,192,108.57,236.4,100.08,279.62,75.39,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Mascot Section -->
+        <section id="about" class="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>Meet Founder Dhrumi Soni!</h2>
+                    <p>Our adorable poodle mascot represents the heart of Amai. Founder Dhrumi started Amai with a
+                        simple dream: to make treats that look just as good as they taste! Every recipe is perfected
+                        using the finest ingredients and a whole lot of love.</p>
+                </div>
+                <img src="assets/Amai_Main_Mascot.png" alt="Amai Mascot Outline"
+                    style="max-width: 250px; margin-top: 2rem; border-radius: 20px;">
+            </div>
+        </section>
+
+        <!-- Visual Menu Section -->
+        <section id="menu" class="menu-section">
+            <div class="section-header">
+                <h2>Our Dessert Menu</h2>
+                <p>Select a category to view our delicious offerings.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="openMenu(event, 'Brownies')">Brownies</button>
+                <button class="tab-btn" onclick="openMenu(event, 'Cookies')">Cookies</button>
+                <button class="tab-btn" onclick="openMenu(event, 'CookieTin')">Cookie Tin</button>
+                <button class="tab-btn" onclick="openMenu(event, 'Cheesecakes')">Cheesecakes</button>
+            </div>
+
+            <!-- Menu Content Wrapper -->
+            <div class="menu-content-wrapper visual-menu-wrapper">
+
+                <!-- BROWNIES -->
+                <div id="Brownies" class="menu-tab-content" style="display: block;">
+                    <h3 class="menu-cursive-header">Brownies</h3>
+                    <div class="visual-grid">
+                        <div class="visual-card"
+                            onclick="openItemModal('Signature Brownie', 'Rich, fudgy brownie with the perfect balance of chocolate', 'assets/IMG_8243.JPG', '2 PIECE', 249, '4 PIECE', 449, '9 PIECE', 849)">
+                            <img src="assets/IMG_8243.JPG" alt="Signature Brownie">
+                            <h4>Signature</h4>
+                            <p>Rich, fudgy brownie...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Nutella Brownie', 'Fudgy brownie swirled with creamy Nutella', 'assets/IMG_8269.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8269.JPG" alt="Nutella Brownie">
+                            <h4>Nutella</h4>
+                            <p>Swirled with Nutella...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Walnut Brownie', 'Fudgy brownie loaded with crunchy walnuts', 'assets/IMG_8303.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8303.JPG" alt="Walnut Brownie">
+                            <h4>Walnut</h4>
+                            <p>Loaded with walnuts...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Biscoff Brownie', 'Fudgy brownie swirled with Biscoff spread & cookie crumbs', 'assets/IMG_8297.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8297.JPG" alt="Biscoff Brownie">
+                            <h4>Biscoff</h4>
+                            <p>Swirled with Biscoff...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Hazelnut Brownie', 'Fudgy brownie with velvety hazelnut goodness', 'assets/IMG_8301.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8301.JPG" alt="Hazelnut Brownie">
+                            <h4>Hazelnut</h4>
+                            <p>Velvety hazelnut goodness...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COOKIES -->
+                <div id="Cookies" class="menu-tab-content">
+                    <h3 class="menu-cursive-header">Cookies</h3>
+                    <div class="visual-grid">
+                        <div class="visual-card"
+                            onclick="openItemModal('Signature Cookie', 'Classic cookie with the perfect balance of sweet & buttery goodness', 'assets/IMG_8329.JPG', '2 PIECE', 249, '4 PIECE', 449, '9 PIECE', 849)">
+                            <img src="assets/IMG_8329.JPG" alt="Signature Cookie">
+                            <h4>Signature</h4>
+                            <p>Sweet & buttery goodness...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Double Choc Cookie', 'Rich chocolate cookie loaded with gooey chocolate chunks', 'assets/IMG_8331.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8331.JPG" alt="Double Choc">
+                            <h4>Double Choc</h4>
+                            <p>Loaded with gooey chunks...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Biscoff Cookie', 'Cookie swirled with Biscoff spread & crunchy cookie crumbs', 'assets/IMG_8330.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8330.JPG" alt="Biscoff Cookie">
+                            <h4>Biscoff</h4>
+                            <p>Swirled with Biscoff...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Nutella Cookie', 'Cookie filled with creamy Nutella in every bite', 'assets/IMG_8322.JPG', '2 PIECE', 299, '4 PIECE', 499, '9 PIECE', 949)">
+                            <img src="assets/IMG_8322.JPG" alt="Nutella Cookie">
+                            <h4>Nutella</h4>
+                            <p>Filled with creamy Nutella...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COOKIE TIN -->
+                <div id="CookieTin" class="menu-tab-content">
+                    <h3 class="menu-cursive-header">Cookie Tin</h3>
+                    <div class="visual-grid">
+                        <div class="visual-card"
+                            onclick="openItemModal('Signature Tin', 'Classic cookie tin with the perfect balance of sweet & buttery goodness', 'assets/IMG_8359.JPG', '125G', 249, '250G', 449, '500G', 849)">
+                            <img src="assets/IMG_8359.JPG" alt="Signature Tin">
+                            <h4>Signature</h4>
+                            <p>Beautiful signature tin...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Double Choc Tin', 'Rich chocolate cookie loaded with gooey chocolate chunks in a tin', 'assets/hero.jpg', '125G', 299, '250G', 499, '500G', 949)">
+                            <img src="assets/hero.jpg" alt="Double Choc Tin">
+                            <h4>Double Choc</h4>
+                            <p>Rich chocolate tin...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Biscoff Tin', 'Cookie swirled with Biscoff spread & crunchy cookie crumbs in a tin', 'assets/hero.jpg', '125G', 299, '250G', 499, '500G', 949)">
+                            <img src="assets/hero.jpg" alt="Biscoff Tin">
+                            <h4>Biscoff</h4>
+                            <p>Biscoff cookie tin...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Nutella Tin', 'Cookie filled with creamy Nutella in every bite in a tin', 'assets/IMG_8364.JPG', '125G', 299, '250G', 499, '500G', 949)">
+                            <img src="assets/IMG_8364.JPG" alt="Nutella Tin">
+                            <h4>Nutella</h4>
+                            <p>Nutella filled tin...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHEESECAKES -->
+                <div id="Cheesecakes" class="menu-tab-content">
+                    <h3 class="menu-cursive-header">Cheesecakes</h3>
+                    <div class="visual-grid">
+                        <div class="visual-card"
+                            onclick="openItemModal('NYC Cheesecake', 'Classic New York cheesecake rich, creamy & timeless', 'assets/IMG_8352.JPG', '250G', 399, '500G', 699, '750G', 999)">
+                            <img src="assets/IMG_8352.JPG" alt="NYC Cheesecake">
+                            <h4>NYC Classic</h4>
+                            <p>Rich, creamy & timeless...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Nutella Cheesecake', 'Creamy cheesecake topped with smooth Nutella', 'assets/IMG_8345.JPG', '250G', 499, '500G', 899, '750G', 1299)">
+                            <img src="assets/IMG_8345.JPG" alt="Nutella Cheesecake">
+                            <h4>Nutella</h4>
+                            <p>Topped with smooth Nutella...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Biscoff Cheesecake', 'Cheesecake layered with Biscoff spread & cookie crumbs', 'assets/IMG_8333.JPG', '250G', 499, '500G', 899, '750G', 1299)">
+                            <img src="assets/IMG_8333.JPG" alt="Biscoff Cheesecake">
+                            <h4>Biscoff</h4>
+                            <p>Layered with Biscoff...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Blueberry Cheesecake', 'Cheesecake topped with juicy blueberry compote', 'assets/cheesecake.jpg', '250G', 499, '500G', 899, '750G', 1299)">
+                            <img src="assets/cheesecake.jpg" alt="Blueberry Cheesecake">
+                            <h4>Blueberry</h4>
+                            <p>Juicy blueberry compote...</p>
+                        </div>
+                        <div class="visual-card"
+                            onclick="openItemModal('Ferrero Rocher Cheesecake', 'Hazelnut cheesecake with Ferrero Rocher pieces', 'assets/IMG_8354.JPG', '250G', 499, '500G', 899, '750G', 1299)">
+                            <img src="assets/IMG_8354.JPG" alt="Ferrero Rocher Cheesecake">
+                            <h4>Ferrero Rocher</h4>
+                            <p>Hazelnut cheesecake...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="wave-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V0H1200V30C1132.19,68.91,1055.71,74.35,985.66,92.83Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="process-container">
+                <div class="process-img">
+                    <img src="assets/process.jpg" alt="Baking tools">
+                </div>
+                <div class="process-steps">
+                    <h2>How the magic happens</h2>
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h4>Whisk with joy</h4>
+                            <p>We blend our premium ingredients until they're perfectly smooth.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h4>Bake to perfection</h4>
+                            <p>Into our warm ovens they go, filling the bakery with sweet aromas.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h4>Decorate beautifully</h4>
+                            <p>Every treat gets a cute finishing touch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews">
+            <div class="section-header">
+                <h2>Sweet Words</h2>
+                <p>What our amazing community is saying.</p>
+            </div>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <!-- Original Reviews -->
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Literally the cutest bakery ever! The presentation is unmatched, and the NYC cheesecake is
+                            completely out of this world. Highly recommend!"</p>
+                        <strong>- Sujal</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"The packaging, the dog logo, the taste... everything is 10/10. Founder Dhrumi really knows
+                            what she is doing. My favorite spot in town!"</p>
+                        <strong>- Manush</strong>
+                    </div>
+                    <!-- New Reviews -->
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"I ordered the Biscoff Brownies for my sister's birthday and they were an absolute hit! So
+                            gooey and perfect."</p>
+                        <strong>- Priya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Amai is my new addiction. The Nutella cookies are dangerously good. The mascot is just a
+                            bonus!"</p>
+                        <strong>- Rohan</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"If you haven't tried the Signature Cookie Tin, you are missing out on life. The design of
+                            the box alone is worth it."</p>
+                        <strong>- Anjali</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Best cheesecake I've ever had. So light, fluffy, and the blueberry compote is fresh, not
+                            artificial at all!"</p>
+                        <strong>- Kevin</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"I love how easy the pre-payment QR code checkout was. The delivery was seamless and the
+                            packaging was adorable."</p>
+                        <strong>- Sneha</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Every single dessert is baked to perfection. The Walnut Brownie has the perfect crunch to
+                            fudge ratio."</p>
+                        <strong>- Aditya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Ferrero Rocher Cheesecake is a masterpiece. I've ordered it three times this month already."
+                        </p>
+                        <strong>- Maya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Founder Dhrumi is a genius! You can really taste the premium ingredients in every single
+                            bite of these cookies."</p>
+                        <strong>- Yash</strong>
+                    </div>
+                </div>
+
+                <!-- Duplicated for seamless infinite scrolling -->
+                <div class="marquee-content">
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Literally the cutest bakery ever! The presentation is unmatched, and the NYC cheesecake is
+                            completely out of this world. Highly recommend!"</p>
+                        <strong>- Sujal</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"The packaging, the dog logo, the taste... everything is 10/10. Founder Dhrumi really knows
+                            what she is doing. My favorite spot in town!"</p>
+                        <strong>- Manush</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"I ordered the Biscoff Brownies for my sister's birthday and they were an absolute hit! So
+                            gooey and perfect."</p>
+                        <strong>- Priya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Amai is my new addiction. The Nutella cookies are dangerously good. The mascot is just a
+                            bonus!"</p>
+                        <strong>- Rohan</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"If you haven't tried the Signature Cookie Tin, you are missing out on life. The design of
+                            the box alone is worth it."</p>
+                        <strong>- Anjali</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Best cheesecake I've ever had. So light, fluffy, and the blueberry compote is fresh, not
+                            artificial at all!"</p>
+                        <strong>- Kevin</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"I love how easy the pre-payment QR code checkout was. The delivery was seamless and the
+                            packaging was adorable."</p>
+                        <strong>- Sneha</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Every single dessert is baked to perfection. The Walnut Brownie has the perfect crunch to
+                            fudge ratio."</p>
+                        <strong>- Aditya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Ferrero Rocher Cheesecake is a masterpiece. I've ordered it three times this month already."
+                        </p>
+                        <strong>- Maya</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i></div>
+                        <p>"Founder Dhrumi is a genius! You can really taste the premium ingredients in every single
+                            bite of these cookies."</p>
+                        <strong>- Yash</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insta Community -->
+        <section class="newsletter">
+            <div class="newsletter-box">
+                <h2>Join our Insta Community!</h2>
+                <p>Follow us for exclusive treats, behind-the-scenes, and cute updates.</p>
+                <div class="subscribe-form">
+                    <a href="https://www.instagram.com/amai._co/" target="_blank" class="btn btn-primary"
+                        style="background-color: var(--clr-bg-primary); color: var(--clr-text-primary); font-size: 1.2rem; padding: 15px 40px;">
+                        <i class="ph ph-instagram-logo"></i> Follow @amai._co
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="assets/Wordmark.png" alt="Amai" class="footer-logo"
+                    onerror="this.src='https://placehold.co/150x50/ffffff/712d42?text=Amai';">
+                <p>Baking smiles, delicious treats, and sweet moments.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links</h3>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="https://www.instagram.com/amai._co/" target="_blank"><i
+                            class="ph ph-instagram-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Amai. All rights reserved. Built with love.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Widget -->
+    <div class="whatsapp-container">
+        <!-- Chat Window (Hidden by default) -->
+        <div id="waChatWidget" class="wa-chat-widget">
+            <div class="wa-chat-header">
+                <div class="wa-header-info">
+                    <img src="assets/logo.png" alt="Amai" class="wa-avatar">
+                    <div>
+                        <h4>Amai</h4>
+                        <p>Typically replies instantly</p>
+                    </div>
+                </div>
+                <button class="wa-close" id="closeWaBtn">&times;</button>
+            </div>
+            <div class="wa-chat-body">
+                <div class="wa-message">
+                    Hi there! 👋<br>How can we help you today? Need recommendations or have a question about an order?
+                </div>
+            </div>
+            <div class="wa-chat-footer">
+                <a href="https://wa.me/918401650305?text=Hi%20Amai!%20I%20have%20a%20question..." target="_blank"
+                    class="btn btn-primary w-100"
+                    style="background-color: #25D366; color: white; justify-content: center; font-size: 1rem;">
+                    <i class="ph-fill ph-whatsapp-logo"></i> Start Chat
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Button -->
+        <button id="waFloatBtn" class="whatsapp-float">
+            <i class="ph ph-whatsapp-logo"></i>
+        </button>
+    </div>
+
+    <!-- Chef Modal -->
+    <div id="chefModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-chef-modal">&times;</span>
+            <h2>About Founder Dhrumi Soni</h2>
+            <div class="modal-body">
+                <img src="assets/Amai_Main_Mascot.png" alt="Founder Dhrumi Mascot" class="modal-img"
+                    onerror="this.src='https://placehold.co/100x100/d6eefe/712d42?text=Amai';">
+                <p>Hi, I'm Dhrumi Soni, the heart and soul behind Amai! I've always believed that baking is a form of
+                    art and love combined. Every cookie, brownie, and slice of cheesecake is crafted with precision,
+                    premium ingredients, and a touch of magic.</p>
+                <p>My goal is to create beautiful, mouth-watering desserts that bring a smile to your face. Thank you
+                    for supporting Amai!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Selection Modal -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content item-modal-content">
+            <span class="close-modal close-item-modal">&times;</span>
+            <img src="" id="itemModalImg" alt="Item Image" class="item-hero-img">
+            <h2 id="itemModalTitle">Item Name</h2>
+            <p id="itemModalDesc" class="item-desc">Item Description</p>
+
+            <div class="item-options">
+                <div class="option-tier">
+                    <div class="tier-info">
+                        <h4 class="tier-name">CRAVINGS</h4>
+                        <span id="tier1Size" class="tier-size">Size</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addFromModal(1)">
+                        ₹<span id="tier1Price">0</span> <i class="ph ph-plus"></i>
+                    </button>
+                </div>
+
+                <div class="option-tier">
+                    <div class="tier-info">
+                        <h4 class="tier-name">OBSESSION</h4>
+                        <span id="tier2Size" class="tier-size">Size</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addFromModal(2)">
+                        ₹<span id="tier2Price">0</span> <i class="ph ph-plus"></i>
+                    </button>
+                </div>
+
+                <div class="option-tier">
+                    <div class="tier-info">
+                        <h4 class="tier-name">ADDICTION</h4>
+                        <span id="tier3Size" class="tier-size">Size</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addFromModal(3)">
+                        ₹<span id="tier3Price">0</span> <i class="ph ph-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">₹0</span>
+            </div>
+            <button class="btn btn-primary w-100" id="checkoutBtn" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- Checkout Modal (Pre-payment) -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-checkout">&times;</span>
+            <h2>Complete Your Order</h2>
+            <p style="margin-bottom: 20px;">We only accept pre-payment to confirm orders.</p>
+
+            <div class="checkout-form">
+                <input type="text" id="custName" placeholder="Full Name (Letters Only)" pattern="[A-Za-z\s]+"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                <input type="tel" id="custPhone" placeholder="Phone (10-digit Number)" pattern="[0-9]{10}"
+                    maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" required>
+                <textarea id="custAddress" placeholder="Delivery Address" required></textarea>
+                <p
+                    style="font-size: 0.85rem; color: #d9534f; margin-top: -10px; margin-bottom: 15px; text-align: left;">
+                    * Note: We are currently delivering only in <strong>Ahmedabad, Gujarat</strong> as of now!</p>
+
+                <div class="payment-box">
+                    <h4>Pre-payment Details</h4>
+                    <p>Total to pay: <strong id="checkoutTotalValue">₹0</strong></p>
+
+                    <div id="qrSection" style="display: none; margin-top: 15px;">
+                        <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">Please scan the QR code to pay
+                            via UPI.</p>
+                        <img src="" alt="UPI QR" id="upiQR" class="upi-qr">
+                    </div>
+
+                    <div id="qrLoader" style="display: none; margin-top: 20px;">
+                        <div class="spinner"></div>
+                        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--clr-text-primary);">Generating
+                            secure QR code...</p>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100" id="generateQRBtn">Generate Payment QR</button>
+                <button class="btn btn-primary w-100" id="confirmOrderBtn" style="display: none;">I have paid, Confirm
+                    Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast">Item added to cart!</div>
+
+    <!-- Order Success Modal -->
+    <div id="orderSuccessModal" class="modal">
+        <div class="modal-content" style="text-align: center; padding: 4rem 2rem;">
+            <span class="close-success close-modal" style="top: 15px; right: 25px;">&times;</span>
+            <div style="font-size: 4rem; color: #25D366; margin-bottom: 1rem;"><i class="ph-fill ph-check-circle"></i>
+            </div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Order Confirmed!</h2>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem;">Thank you, <span id="successName"></span>!
+                Your pre-payment has been logged. We will contact you at <span id="successPhone"></span> shortly with
+                updates on your sweet treats!</p>
+            <button class="btn btn-primary" id="closeSuccessBtn">Continue Exploring</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- Menu Tabs Logic ---
+        function openMenu(evt, categoryName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("menu-tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(categoryName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // --- Chef Modal Logic ---
+        const chefModal = document.getElementById("chefModal");
+        const chefBtn = document.getElementById("meetChefBtn");
+        const closeChef = document.getElementsByClassName("close-chef-modal")[0];
+
+        chefBtn.onclick = function () { chefModal.style.display = "flex"; }
+        closeChef.onclick = function () { chefModal.style.display = "none"; }
+
+        // --- Item Modal Logic ---
+        const itemModal = document.getElementById("itemModal");
+        const closeItem = document.getElementsByClassName("close-item-modal")[0];
+
+        let currentItemName = "";
+
+        function openItemModal(name, desc, imgSrc, s1, p1, s2, p2, s3, p3) {
+            currentItemName = name;
+
+            document.getElementById("itemModalImg").src = imgSrc;
+            document.getElementById("itemModalTitle").innerText = name;
+            document.getElementById("itemModalDesc").innerText = desc;
+
+            document.getElementById("tier1Size").innerText = s1;
+            document.getElementById("tier1Price").innerText = p1;
+
+            document.getElementById("tier2Size").innerText = s2;
+            document.getElementById("tier2Price").innerText = p2;
+
+            document.getElementById("tier3Size").innerText = s3;
+            document.getElementById("tier3Price").innerText = p3;
+
+            itemModal.style.display = "flex";
+        }
+
+        closeItem.onclick = function () { itemModal.style.display = "none"; }
+
+        function addFromModal(tierLevel) {
+            let size = document.getElementById(`tier${tierLevel}Size`).innerText;
+            let price = document.getElementById(`tier${tierLevel}Price`).innerText;
+
+            addToCart(currentItemName, size, price);
+            itemModal.style.display = "none"; // Close modal after adding
+        }
+
+
+        // --- E-commerce Logic ---
+        let cart = [];
+        const cartToggleBtn = document.getElementById('cartToggleBtn');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCartBtn = document.getElementById('closeCartBtn');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotalValue = document.getElementById('cartTotalValue');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        const checkoutModal = document.getElementById('checkoutModal');
+        const closeCheckout = document.getElementsByClassName('close-checkout')[0];
+        const checkoutTotalValue = document.getElementById('checkoutTotalValue');
+        const upiQR = document.getElementById('upiQR');
+        const confirmOrderBtn = document.getElementById('confirmOrderBtn');
+
+        cartToggleBtn.onclick = function () {
+            cartSidebar.classList.add('active');
+            cartOverlay.classList.add('active');
+        }
+        closeCartBtn.onclick = function () {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        }
+        cartOverlay.onclick = function () {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        }
+
+        window.addToCart = function (name, size, price) {
+            cart.push({ name, size, price: parseInt(price) });
+            updateCartUI();
+
+            // Show toast notification instead of opening sidebar
+            showToast(`${name} added to cart!`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        window.removeFromCart = function (index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            cartCount.innerText = cart.length;
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart-msg">Your cart is empty.</p>';
+                cartTotalValue.innerText = '₹0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const itemEl = document.createElement('div');
+                itemEl.className = 'cart-item';
+                itemEl.innerHTML = `
+                    <div class="cart-item-info">
+                        <strong>${item.name}</strong>
+                        <span>${item.size} - ₹${item.price}</span>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">&times;</button>
+                `;
+                cartItemsContainer.appendChild(itemEl);
+            });
+
+            cartTotalValue.innerText = `₹${total}`;
+            checkoutBtn.disabled = false;
+        }
+
+        const qrSection = document.getElementById('qrSection');
+        const qrLoader = document.getElementById('qrLoader');
+        const generateQRBtn = document.getElementById('generateQRBtn');
+
+        checkoutBtn.onclick = function () {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            checkoutTotalValue.innerText = `₹${total}`;
+            upiQR.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=amai@upi&pn=AmaiBakery&am=${total}`;
+
+            // Reset modal state
+            qrSection.style.display = "none";
+            qrLoader.style.display = "none";
+            generateQRBtn.style.display = "block";
+            confirmOrderBtn.style.display = "none";
+
+            checkoutModal.style.display = "flex";
+        }
+
+        closeCheckout.onclick = function () { checkoutModal.style.display = "none"; }
+
+        const orderSuccessModal = document.getElementById('orderSuccessModal');
+        const closeSuccess = document.getElementsByClassName('close-success')[0];
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+
+        generateQRBtn.onclick = function () {
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+
+            if (!name || !phone || !address) {
+                alert("Please fill in all details before generating the QR code.");
+                return;
+            }
+
+            if (phone.length !== 10) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+
+            // Show Loader
+            generateQRBtn.style.display = "none";
+            qrLoader.style.display = "block";
+
+            // Simulate 0.7 second delay
+            setTimeout(() => {
+                qrLoader.style.display = "none";
+                qrSection.style.display = "block";
+                confirmOrderBtn.style.display = "block";
+            }, 700);
+        }
+
+        confirmOrderBtn.onclick = function () {
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+
+            if (!name || !phone || !address) {
+                alert("Please fill in all details.");
+                return;
+            }
+
+            // Hide checkout modal and show success modal
+            checkoutModal.style.display = "none";
+            document.getElementById('successName').innerText = name;
+            document.getElementById('successPhone').innerText = phone;
+            orderSuccessModal.style.display = "flex";
+
+            // Empty Cart
+            cart = [];
+            updateCartUI();
+        }
+
+        closeSuccess.onclick = function () { orderSuccessModal.style.display = "none"; }
+        closeSuccessBtn.onclick = function () { orderSuccessModal.style.display = "none"; }
+
+        // Global Modal Close
+        window.onclick = function (event) {
+            if (event.target == chefModal) chefModal.style.display = "none";
+            if (event.target == checkoutModal) checkoutModal.style.display = "none";
+            if (event.target == itemModal) itemModal.style.display = "none";
+            if (event.target == orderSuccessModal) orderSuccessModal.style.display = "none";
+        }
+
+        // --- WhatsApp Widget Logic ---
+        const waFloatBtn = document.getElementById("waFloatBtn");
+        const waChatWidget = document.getElementById("waChatWidget");
+        const closeWaBtn = document.getElementById("closeWaBtn");
+
+        waFloatBtn.onclick = function () {
+            waChatWidget.classList.toggle("active");
+        }
+
+        closeWaBtn.onclick = function () {
+            waChatWidget.classList.remove("active");
+        }
+
+        // --- Draggable & Auto-Scrolling Reviews Marquee ---
+        const marqueeContainer = document.querySelector('.marquee-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isHovered = false;
+        let animationId;
+
+        // Auto-scroll logic (slower speed)
+        function autoScroll() {
+            if (!isHovered && !isDown) {
+                marqueeContainer.scrollLeft += 0.5; // Slowed down speed
+                // Reset scroll to create infinite loop effect
+                if (marqueeContainer.scrollLeft >= marqueeContainer.scrollWidth / 2) {
+                    marqueeContainer.scrollLeft = 0;
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        }
+
+        // Start auto-scroll
+        autoScroll();
+
+        // Mouse Events for Dragging
+        marqueeContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - marqueeContainer.offsetLeft;
+            scrollLeft = marqueeContainer.scrollLeft;
+        });
+
+        marqueeContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            isHovered = false;
+        });
+
+        marqueeContainer.addEventListener('mouseenter', () => {
+            isHovered = true;
+        });
+
+        marqueeContainer.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        marqueeContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - marqueeContainer.offsetLeft;
+            const walk = (x - startX) * 1.5; // Scroll speed multiplier when dragging
+            marqueeContainer.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+
+</html>
